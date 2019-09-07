@@ -134,7 +134,7 @@ function buyignMoreItems() {
                 else
                 {
                     console.log("-----------------------");
-                    console.log("Thank you for shopping with BAMAZON today!");
+                    console.log("Thank you for visiting BAMAZON today!");
                     connection.end();
                 }
             }
