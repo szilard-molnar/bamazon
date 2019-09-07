@@ -17,6 +17,3 @@ After the purchase the application asks if the user would like to continue shopp
 
 Below is a video and screenshots.
 https://drive.google.com/file/d/1MUSuzJjSGcQ0GGEQB0GthEzdiwpZIopq/view
-
-
-Screenshot of the MySQL database:
