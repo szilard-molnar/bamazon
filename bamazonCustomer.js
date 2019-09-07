@@ -85,6 +85,8 @@ function buyProduct() {
 
                         var totalCost = res[i].price * quantityRequested;
                         console.log("Total cost: $" + totalCost);
+
+                        connection.query("UPDATE products SET stock_quantity = " + numberOfItems + " WHERE item_id = " + itemRequested);
                     }
                 }
             }
