@@ -15,5 +15,5 @@ If the requested amount exceeds the amount that is currently available, the syst
   
 After the purchase the application asks if the user would like to continue shopping. If yes, then the app displays the items again, and the purchasing process begins again. If not, then the app stops working, and the user gets back to the command line with a "Thank You" message.
 
-Below is a video and screenshots.
+Below is a video.
 https://drive.google.com/file/d/1MUSuzJjSGcQ0GGEQB0GthEzdiwpZIopq/view

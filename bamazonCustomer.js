@@ -68,6 +68,13 @@ function buyProduct() {
             }
             else
             {
+                if(res.length == 0)
+                    {
+                        console.log("-----------------------");
+                        console.log("We don't have any item under this ID...");
+                        console.log("-----------------------");
+                        buyProduct();
+                    }
                 for(var i = 0; i < res.length; i++)
                 {
                     var numberOfItems = parseInt(res[i].stock_quantity);
