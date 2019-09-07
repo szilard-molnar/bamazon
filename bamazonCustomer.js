@@ -87,6 +87,8 @@ function buyProduct() {
                         console.log("Total cost: $" + totalCost);
 
                         connection.query("UPDATE products SET stock_quantity = " + numberOfItems + " WHERE item_id = " + itemRequested);
+
+                        buyignMoreItems();
                     }
                 }
             }
@@ -95,3 +97,43 @@ function buyProduct() {
 }
 
 buyProduct();
+
+function buyignMoreItems() {
+    inquirer.prompt([
+        {
+            type:"list",
+            name: "another",
+            message: "Would you like to continue shopping?",
+            choices: ["yes", "no"]
+        }
+    ])
+    .then(function(response){
+        console.log(response.another);
+        connection.query("SELECT * FROM products", function(error,res){
+            if(error)
+            {
+                console.log(error);
+            }
+            else{
+                if(response.another == "yes")
+                {
+                //console.log(res);
+                for(var i = 0; i < res.length; i++)
+                {
+                    console.log("Product ID: ",res[i].item_id);
+                    console.log("Product name: ",res[i].product_name);
+                    console.log("Price: ",res[i].price);
+                    console.log("-----------------------");
+                }
+
+                buyProduct();
+                }
+                else
+                {
+                    console.log("Thank you for shopping with BAMAZON today!");
+                    connection.end();
+                }
+            }
+        })
+    })
+}
