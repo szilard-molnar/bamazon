@@ -71,6 +71,8 @@ function buyProduct() {
                 for(var i = 0; i < res.length; i++)
                 {
                     var numberOfItems = parseInt(res[i].stock_quantity);
+                    console.log("-----------------------");
+                    console.log("The item you picked: " + res[i].product_name);
                     console.log("Currently available: " + numberOfItems);
                     console.log("Quantity requested: " + quantityRequested);
                     if(numberOfItems < quantityRequested)
@@ -85,6 +87,7 @@ function buyProduct() {
 
                         var totalCost = res[i].price * quantityRequested;
                         console.log("Total cost: $" + totalCost);
+                        console.log("-----------------------");
 
                         connection.query("UPDATE products SET stock_quantity = " + numberOfItems + " WHERE item_id = " + itemRequested);
 
@@ -130,6 +133,7 @@ function buyignMoreItems() {
                 }
                 else
                 {
+                    console.log("-----------------------");
                     console.log("Thank you for shopping with BAMAZON today!");
                     connection.end();
                 }
